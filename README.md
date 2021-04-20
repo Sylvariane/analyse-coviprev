@@ -8,7 +8,7 @@ Dans un second temps, on s'intéressera aux données sur l'*acceptation des mesu
 
 ### Analyses des différences entre Hommes et Femmes 
 
-*Projet visible ici :* [notebook du projet](https://deepnote.com/project/CoviprevAnalysis-UUVMmZkdQ52wjEKPgVUK9A/%2Fcoviprev_gender_analysis.ipynb) & [notebook-GitHub](https://github.com/Sylvariane/analyse-coviprev/blob/main/coviprev_gender_analysis.ipynb)
+*Projet visible ici :* [Deepnote](https://deepnote.com/project/CoviprevAnalysis-UUVMmZkdQ52wjEKPgVUK9A/%2Fcoviprev_gender_analysis.ipynb) & [GitHub](https://github.com/Sylvariane/analyse-coviprev/blob/main/coviprev_gender_analysis.ipynb)
 
 Les variables en lien avec l'anxiété, la dépression et les troubles du sommeil ont été analysés. On retrouve des résultats présents dans la littérature avec notamment des scores d'anxiété plus importants chez les femmes que chez les hommes. On observe aussi une forte augmentation des scores de dépression et des troubles du sommeil à l'annonce du second confinement et ces scores ne diminuent pas après la fin de ce second confinement. 
 
