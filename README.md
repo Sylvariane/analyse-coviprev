@@ -4,7 +4,7 @@ L'enquête Coviprev réalisé par Santé Publique France et BVA Access Panel s'i
 Dans un premier temps, on s'intéresse uniquement aux données sur la santé mentale et plus particulièrement aux scores d'anxiété, de dépression et les troubles du sommeil. On va étudier les différences entre hommes et femmes puis les différences entre les tranches d'âge.
 Dans un second temps, on s'intéressera aux données sur l'acceptation des mesures sanitaires (port du masque, distanciation sociale, lavage des mains, etc.) dans notre échantillon. Là aussi, on s'intéressera aux différences entre hommes et femmes puis aux différences entre les tranches d'âge. 
 
-## Analyse des différences entre Hommes et Femmes
+## Analyses des différences entre Hommes et Femmes
 
 *Projet visible ici :* [notebook du projet](https://deepnote.com/project/CoviprevAnalysis-UUVMmZkdQ52wjEKPgVUK9A/%2Fcoviprev_gender_analysis.ipynb)
 
