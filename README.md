@@ -10,6 +10,9 @@ Dans un second temps, on s'intéressera aux données sur l'acceptation des mesur
 
 Les variables en lien avec l'anxiété, la dépression et les troubles du sommeil ont été analysés. On retrouve des résultats présents dans la littérature avec notamment des scores d'anxiété plus importants chez les femmes que chez les hommes. On observe aussi une forte augmentation des scores de dépression et des troubles du sommeil à l'annonce du second confinement et ces scores ne diminuent pas après la fin de ce second confinement. 
 
-[!Graphique Plotly](https://user-images.githubusercontent.com/64648386/115440931-93561200-a210-11eb-8443-7ac002632605.png)
+![newplot(2)](https://user-images.githubusercontent.com/64648386/115441010-a963d280-a210-11eb-8c76-7383af6cbc35.png)
+
+![newplot(1)](https://user-images.githubusercontent.com/64648386/115441021-af59b380-a210-11eb-8422-773628d268b2.png)
+
 
 
