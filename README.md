@@ -14,5 +14,10 @@ Les variables en lien avec l'anxiété, la dépression et les troubles du sommei
 
 ![newplot(1)](https://user-images.githubusercontent.com/64648386/115441021-af59b380-a210-11eb-8422-773628d268b2.png)
 
+Il semble donc que le second confinement a eu des effets néfastes sur la santé mentale des français par rapport au premier confinement. Il serait intéressant d'avoir les données qui ont suivi ainsi que celle du troisième confinement pour suivre cette évolution. 
+
+## Analyses des différences en fonction de l'âge
+
+{en cours...}
 
 
