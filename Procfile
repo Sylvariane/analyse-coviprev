@@ -1,1 +1,1 @@
-web: gunicorn app:dashboard_coviprev_age.server
+web: gunicorn app:server --timeout 300
