@@ -20,7 +20,7 @@ Les variables en lien avec l'anxiété, la dépression et les troubles du sommei
 
 ### Analyses des différences en fonction de l'âge
 
-*Projet visible ici :* [Script Dashboard](https://github.com/Sylvariane/analyse-coviprev/blob/main/dashboard_coviprev_age.py), [App Web avec Keroku](https://coviprev-app.herokuapp.com/) & [Notebook](https://github.com/Sylvariane/analyse-coviprev/blob/main/coviprev_age_analysis.ipynb)
+*Projet visible ici :* [Script Dashboard](https://github.com/Sylvariane/analyse-coviprev/blob/main/dashboard_coviprev_age.py), [App Web avec Heroku](https://coviprev-app.herokuapp.com/) & [Notebook](https://github.com/Sylvariane/analyse-coviprev/blob/main/coviprev_age_analysis.ipynb)
 
 Cette fois-ci l'idée était d'analyser les résultats entre les différents groupes d'âge et de créer un dashboard interactif. On observe que ce sont les tranches d'âge les plus jeunes qui sont sensibles à l'anxiété et à la dépression et qui présentent une forte augmentation des troubles du sommeil. 
 
