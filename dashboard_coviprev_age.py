@@ -27,6 +27,8 @@ for col in data.columns:
 data.dropna(inplace=True)
 
 # Création du dashboard
+import os
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -36,6 +38,8 @@ age = data.age.unique()
 indice = ['anxiete', 'depression', 'pbsommeil']
 
 app = dash.Dash(__name__)
+
+server = app.server
 
 app.layout = html.Div([
     dcc.Checklist(
@@ -64,4 +68,5 @@ def update_graph(age, indice):
     fig = px.line(data[mask], x="vague", y=indice, color="age")
     return fig
 
-app.run_server(debug=True, use_reloader=False)
+if __name__ == '__main__':
+    app.run_server(debug=True)
