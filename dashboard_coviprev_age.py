@@ -27,8 +27,6 @@ for col in data.columns:
 data.dropna(inplace=True)
 
 # Création du dashboard
-import os
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -69,4 +67,4 @@ def update_graph(age, indice):
     return fig
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, use_reloader=False)
