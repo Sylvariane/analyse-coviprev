@@ -32,15 +32,26 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
+import plotly.io as pio
+
+pio.templates.default = "seaborn"
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 age = data.Age.unique()
 indice = ['Anxiété', 'Dépression', 'Troubles du sommeil']
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
 app.layout = html.Div([
+    dcc.Markdown('''# Tableau de bord des données de l'étude Coviprev
+Cette appli sert à montrer les résultats obtenus dans l'étude Coviprev réalisée par Santé Publique France. Les données présentées ci-dessous montrent le pourcentage de personnes dépressives, anxieuses et ayant des troubles du sommeil au moment des mesures. Les mesures ont été effectuées par la passation de questionnaire. Une note limite était définie pour savoir si la personne était ou non dépressive, anxieuse ou avait des troubles du sommeil.
+
+Le test utilisé pour déterminer si les individus étaient dépressifs et/ou anxieux était la HAD (Hospitality Anxiety and Depression scale ).
+
+
+Source : *[Données Coviprev](https://www.data.gouv.fr/fr/datasets/donnees-denquete-relatives-a-levolution-des-comportements-et-de-la-sante-mentale-pendant-lepidemie-de-covid-19-coviprev/)*'''),
     dcc.Checklist(
         id="checklist",
         options=[{"label": x, "value": x} 
@@ -52,7 +63,7 @@ app.layout = html.Div([
         id='dropdown',
         options=[{"label": i, "value": i} 
                  for i in indice],
-        value=indice[0:]
+        placeholder="Choississez un indice",
             ),
     dcc.Graph(id="line-chart"),
 ])
@@ -64,8 +75,10 @@ app.layout = html.Div([
 
 def update_graph(age, indice):
     mask = data.Age.isin(age)
-    fig = px.line(data[mask], x="Semaine", y=indice, color="Age", 
-                  title="Evolution des différents indices mesurés par l'enquête Coviprev au cours du temps en fonction de l'âge")
+    fig = px.line(data[mask], x="Semaine", y=indice, color="Age")
+    fig.update_layout(title="Evolution des différents indices mesurés par l'enquête Coviprev en 2020",
+                   yaxis_title="% de personnes",
+                   xaxis_title="Date de la mesure")
     return fig
 
 if __name__ == '__main__':
