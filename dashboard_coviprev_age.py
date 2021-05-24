@@ -20,7 +20,7 @@ df.drop(["Unnamed: 29", "Unnamed: 30", "Unnamed: 31"], axis=1, inplace=True)
 df['semaine'] = df['semaine'].apply(lambda x:str(x))
 df['vague'] = df["semaine"].apply(lambda x: x.split(':')[0])
 data = df[["age","vague", "semaine", "anxiete", "depression","pbsommeil"]]
-data = data.replace(columns={"anxiete":"Anxiété", "depression":"Dépression", "pbsommeil":"Troubles du sommeil"})
+data.columns = ["Age", "Vague", "Semaine", "Anxiété", "Dépression", "Troubles du sommeil"]
 del df
 for col in data.columns:
     if data[col].dtype == object:
@@ -34,7 +34,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 
-age = data.age.unique()
+age = data.Age.unique()
 indice = ['Anxiété', 'Dépression', 'Troubles du sommeil']
 
 app = dash.Dash(__name__)
