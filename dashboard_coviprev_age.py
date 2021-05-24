@@ -4,7 +4,7 @@ Créée le 15 mai 2021
 
 @author: Cécile Guillot
 
-Script permettant de nettoyer les données de l'étude Coviprev
+Script permettant de nettoyer les données de l'étude Coviprev (données sur l'âge)
 et de générer un tableau de bord contenant les résultats de cette enquête
 """
 
@@ -65,7 +65,7 @@ app.layout = html.Div([
 def update_graph(age, indice):
     mask = data.Age.isin(age)
     fig = px.line(data[mask], x="Semaine", y=indice, color="Age", 
-                  title="Evolution des différents indices mesurés par l'enquête Coviprev au cours du temps en fonction de l'âge\n Source : https://www.data.gouv.fr/fr/datasets/donnees-denquete-relatives-a-levolution-des-comportements-et-de-la-sante-mentale-pendant-lepidemie-de-covid-19-coviprev/#_")
+                  title="Evolution des différents indices mesurés par l'enquête Coviprev au cours du temps en fonction de l'âge")
     return fig
 
 if __name__ == '__main__':
