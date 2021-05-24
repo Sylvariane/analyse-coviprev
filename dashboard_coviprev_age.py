@@ -52,7 +52,7 @@ app.layout = html.Div([
         id='dropdown',
         options=[{"label": i, "value": i} 
                  for i in indice],
-        value=indice[1:]
+        value=indice[0:]
             ),
     dcc.Graph(id="line-chart"),
 ])
@@ -63,8 +63,8 @@ app.layout = html.Div([
      dash.dependencies.Input("dropdown", "value")])
 
 def update_graph(age, indice):
-    mask = data.age.isin(age)
-    fig = px.line(data[mask], x="vague", y=indice, color="Age", 
+    mask = data.Age.isin(age)
+    fig = px.line(data[mask], x="Semaine", y=indice, color="Age", 
                   title="Evolution des différents indices mesurées par l'enquête Coviprev au cours du temps en fonction de l'âge")
     return fig
 
