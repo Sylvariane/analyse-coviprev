@@ -53,7 +53,7 @@ app.layout = html.Div([
         id='dropdown',
         options=[{"label": i, "value": i} 
                  for i in indice],
-        value=indice[0:]
+        value=indice[1:]
             ),
     dcc.Graph(id="line-chart"),
 ])
