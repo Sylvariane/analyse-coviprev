@@ -65,7 +65,7 @@ app.layout = html.Div([
 def update_graph(age, indice):
     mask = data.Age.isin(age)
     fig = px.line(data[mask], x="Semaine", y=indice, color="Age", 
-                  title="Evolution des différents indices mesurées par l'enquête Coviprev au cours du temps en fonction de l'âge")
+                  title="Evolution des différents indices mesurés par l'enquête Coviprev au cours du temps en fonction de l'âge\n Source : https://www.data.gouv.fr/fr/datasets/donnees-denquete-relatives-a-levolution-des-comportements-et-de-la-sante-mentale-pendant-lepidemie-de-covid-19-coviprev/#_")
     return fig
 
 if __name__ == '__main__':
