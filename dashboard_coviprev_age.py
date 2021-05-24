@@ -19,7 +19,8 @@ df = pd.read_csv(filepath, sep=';')
 df.drop(["Unnamed: 29", "Unnamed: 30", "Unnamed: 31"], axis=1, inplace=True)
 df['semaine'] = df['semaine'].apply(lambda x:str(x))
 df['vague'] = df["semaine"].apply(lambda x: x.split(':')[0])
-data = df[["age",'vague', 'semaine', 'anxiete', 'depression','pbsommeil']]
+data = df[["age","vague", "semaine", "anxiete", "depression","pbsommeil"]]
+data = data.replace(columns={"anxiete":"Anxiété", "depression":"Dépression", "pbsommeil":"Troubles du sommeil"})
 del df
 for col in data.columns:
     if data[col].dtype == object:
@@ -27,13 +28,14 @@ for col in data.columns:
 data.dropna(inplace=True)
 
 # Création du dashboard
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 
 age = data.age.unique()
-indice = ['anxiete', 'depression', 'pbsommeil']
+indice = ['Anxiété', 'Dépression', 'Troubles du sommeil']
 
 app = dash.Dash(__name__)
 
@@ -51,7 +53,7 @@ app.layout = html.Div([
         id='dropdown',
         options=[{"label": i, "value": i} 
                  for i in indice],
-        value=indice[1:]
+        value=indice[0:]
             ),
     dcc.Graph(id="line-chart"),
 ])
@@ -63,8 +65,9 @@ app.layout = html.Div([
 
 def update_graph(age, indice):
     mask = data.age.isin(age)
-    fig = px.line(data[mask], x="vague", y=indice, color="age")
+    fig = px.line(data[mask], x="vague", y=indice, color="age", 
+                  title="Evolution des différents indices mesurées par l'enquête Coviprev au cours du temps en fonction de l'âge")
     return fig
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
