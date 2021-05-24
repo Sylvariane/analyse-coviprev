@@ -28,7 +28,6 @@ for col in data.columns:
 data.dropna(inplace=True)
 
 # Création du dashboard
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -65,7 +64,7 @@ app.layout = html.Div([
 
 def update_graph(age, indice):
     mask = data.age.isin(age)
-    fig = px.line(data[mask], x="vague", y=indice, color="age", 
+    fig = px.line(data[mask], x="vague", y=indice, color="Age", 
                   title="Evolution des différents indices mesurées par l'enquête Coviprev au cours du temps en fonction de l'âge")
     return fig
 
