@@ -1,1 +1,1 @@
-web: gunicorn dashboard_coviprev_age:server
+web: gunicorn dashboard_coviprev:server
