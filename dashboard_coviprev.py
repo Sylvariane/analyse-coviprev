@@ -49,7 +49,7 @@ import dash_html_components as html
 import plotly.express as px
 import plotly.io as pio
 
-pio.templates.default = "seaborn"
+pio.templates.default = "ggplot2"
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 age = data_age.Age.unique()
@@ -80,19 +80,19 @@ Source : *[Données Coviprev](https://www.data.gouv.fr/fr/datasets/donnees-denqu
             id="checklist",
             options=[{"label": x, "value": x} 
                  for x in age],
-            value=age[1:],
+            value=age[1:],            
             labelStyle={'display': 'inline-block'}
             ),
         dcc.Graph(id="line-chart-age"),
         ], 
-        style={'width': '49%', 'display': 'inline-block'}),
+        style={'width': '49%', 'display': 'inline-block', "verticalAlign":"left"}),
     html.Div([
         dcc.Checklist(
             id="checklist-sexe",
             options=[{"label": x, "value": x} 
                      for x in sexe],
-            value=sexe[1:],
-            labelStyle={'display': 'inline-block'}
+            value=sexe[1:],            
+            labelStyle={'display': 'inline-block', "verticalAlign":"right"}
             ),
         dcc.Graph(id='line-chart-sexe')], 
         style={'width': '49%', 'display': 'inline-block'}),])
